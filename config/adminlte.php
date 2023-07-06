@@ -16,7 +16,7 @@ return [
 
     'title' => '',
     'title_prefix' => '',
-    'title_postfix' => '| TestiAPP',
+    'title_postfix' => '| Abogados',
 
     /*
     |--------------------------------------------------------------------------
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b> TestiAPP',
-    // 'logo_img' => '/img/logo.png',
+    'logo' => '<b>Admin</b> Abogados',
+    //'logo_img' => '/img/logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',

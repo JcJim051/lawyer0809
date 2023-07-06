@@ -4,19 +4,28 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Seller;
+use App\Models\Abogado;
+use App\Models\Control;
+use Carbon\Carbon;
+
 use Illuminate\Support\Facades\DB;
 
 class AsistenciaController extends Controller
 {
     public function mostrarFormulario()
     {
-        return view('admin.formulario.index');
+        $fechaHoraActual = Carbon::now();
+        $abogados = Abogado::all();
+        // dd($abogados);
+        return view('admin.formulario.index', compact('abogados','fechaHoraActual'));
     }
     public function procesarFormulario(Request $request)
     {
-        // Procesar los datos del formulario y realizar las acciones necesarias
-
-        return redirect()->back()->with('success', '¡Formulario enviado correctamente!');
+        
+        $data= request()->except('_token');
+        //dd($data);
+        Control::insert($data);
+        
+        return redirect()->back()->with('info', 'Reporte de asistencia realizado con exíto');
     }
 }

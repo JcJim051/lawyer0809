@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h2>Lista de Abogados</h2>
+    <h2>Aplicacion de Caracterizacion de abogados</h2>
 @stop
 
 @section('content')
@@ -13,11 +13,6 @@
         </div>
         @endif
 
-        <div class="card">
-            <div class="card-body">
-                
-            </div>
-        </div>
-
+       
 @stop
 

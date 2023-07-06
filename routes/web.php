@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/asistencia', [AsistenciaController::class, 'mostrarFormulario']);
-Route::post('/asisitencia', [AsistenciaController::class, 'procesarFormulario']);
+Route::post('/asisitencia', [AsistenciaController::class, 'procesarFormulario'])->name('procesarFormulario');
 
 Route::middleware([
     'auth:sanctum',
