@@ -133,7 +133,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="experiencia">Experiencia</label>
-                                    <textarea readonly class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->titulo}}</textarea>
+                                    <textarea readonly class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->experiencia}}</textarea>
                                 </div>
                             </div>
 
@@ -258,7 +258,7 @@
                             <h4>Historial de reuniones</h4>
                         </div>    
                         <div class="card-body">
-                            <table  id="example" class="display responsive nowrap" style="width:99%">
+                            <table  id="example1" class="display responsive nowrap" style="width:99%">
                                 <thead style="tab-size: 10px">
                                     <tr>
                                         <th>#</th>
@@ -319,6 +319,22 @@
 <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.print.min.js"></script>
     <script>$(document).ready(function () {
         $('#example').DataTable({
+            
+            "pageLength": 25,
+             "columnDefs": [
+
+           
+
+             ],
+           
+             
+
+             }
+             );
+         })
+
+         $(document).ready(function () {
+        $('#example1').DataTable({
             
             "pageLength": 25,
              "columnDefs": [
