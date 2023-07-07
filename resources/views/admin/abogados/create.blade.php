@@ -167,7 +167,8 @@
                                         <option value="escrutador_nacional">Testigo de Escrutinios Nacional</option>
                                         <option value="registraduria">Funcionario de laregistraduria</option>
                                         <option value="mesa_de_justicia">Mesa de Justicia</option>
-                                        <option value="coordinado">Coordinador</option>                                    
+                                        <option value="coordinado">Coordinador</option>    
+                                        <option value="jurado">Jurado Votación</option>                                  
                                     </select>
                                 </div>
                             </div>
