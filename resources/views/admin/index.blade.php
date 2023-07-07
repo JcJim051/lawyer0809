@@ -33,7 +33,7 @@
         
             <div class="col-md-12">
                 <div id="centrador">
-             <img id="imagen" class="public/img-responsive" style="width:300px" src="img/imagencampaña.jpeg" alt="">
+             <img id="imagen" class="img-responsive" style="width:300px" src="public/img/imagencampaña.jpeg" alt="">
             </div>
             
         </div>
