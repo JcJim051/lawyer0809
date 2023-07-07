@@ -15,7 +15,7 @@ class AsistenciaController extends Controller
     public function mostrarFormulario()
     {
         $fechaHoraActual = Carbon::now();
-        $fecha_actual=$fecha_actual->setTimezone('America/Bogota');
+        $fechaHoraActual=$fechaHoraActual->setTimezone('America/Bogota');
         $abogados = Abogado::all();
         // dd($abogados);
         return view('admin.formulario.index', compact('abogados','fechaHoraActual'));
