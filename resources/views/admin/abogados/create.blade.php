@@ -67,7 +67,7 @@
                                 </div>
 
                                 
-                                <div class="col-sm-4 text-center">
+                                <div class="text-center col-sm-4">
                                     <div class="card card-outline">
                                         <div class="card-header">
                                             <h6>Foto</h6>
@@ -101,6 +101,7 @@
                                 <div class="col-sm-6">                        
                                     <label for="estudios">Nivel de estudios</label>
                                     <select class="form-control"  id="estudios" name="estudios">
+                                        <option value="">Seleccione una opcion</option>
                                         <option value="profesional">Profesional</option>
                                         <option value="especialista">Especializacion</option>
                                         <option value="maestria">Maestria</option>
@@ -125,12 +126,21 @@
                                     <label for="experiencia">Experiencia</label>
                                     <textarea class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" ></textarea>
                                 </div>
+                                <div class="col-sm-6">
+                                    <label for="titulo">¿Es Funcionario Publico?</label>
+                                    <Select name="rol" id="rol" class="form-control">
+                                        <option value="">Seleccione una opcion</option>
+                                        <option value="0">No</option>
+                                        <option value="1">Si</option>
+                                    </Select>
+                                </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="electoral">¿Ha trabajado en proceso electoral anteriormente?</label>
                                     <select name="electoral" id="electoral" class="form-control">
+                                        <option value="">Seleccione una opcion</option>
                                         <option value="si">Si</option>                                    
                                         <option value="no">No</option>
                                         
@@ -139,6 +149,7 @@
                                 <div class="col-sm-6">
                                     <label for="rol">¿En que rol?</label>
                                     <select name="rol" id="rol" class="form-control">
+                                        <option value="">Seleccione una opcion</option>
                                         <option value="ninguno">Ninguno</option>    
                                         <option value="testigo">Testigo</option>                                    
                                         <option value="coordinado">Coordinador de puesto</option>
@@ -164,7 +175,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label class="sr-only" for="inlineFormInputGroup"></label>
-                                    <div class="input-group mb-2">
+                                    <div class="mb-2 input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fab fa-facebook-f"></i></div>
                                     </div>
@@ -173,7 +184,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="sr-only" for="inlineFormInputGroup"></label>
-                                    <div class="input-group mb-2">
+                                    <div class="mb-2 input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fab fa-instagram"></i></div>
                                     </div>

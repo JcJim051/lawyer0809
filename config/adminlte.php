@@ -320,13 +320,19 @@ return [
         
         ],
         [
-            'text' => 'Ver Abogados',
+            'text' => 'Lista de Abogados',
             'route'  => 'admin.abogado.index',
             'icon' => 'fas fa-fw fa-user',
             // 'can'  => 'Superuser-administrador-escrutador-coordinador-consultor',
         
         ],
-       
+        [
+            'text' => 'Reunion a Candidato ',
+            'route'  => 'admin.reuniones.index',
+            'icon' => 'fas fa-fw fa-user',
+            // 'can'  => 'Superuser-administrador-escrutador-coordinador-consultor',
+        
+        ],
         
 
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Abogado;
+use App\Models\Control;
+
 use Illuminate\Support\Facades\DB;
 
 class AbogadoController extends Controller
@@ -73,9 +75,15 @@ class AbogadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($data)
     {
-        //
+            $codigo_abogado = $data;
+            $data = Abogado::findOrFail($data);
+            $datos = DB::table('controls')
+            ->where( 'codigo_abogado', '=', $data->id)
+            ->get();    
+
+        return view('admin.abogados.ver', compact('data','datos'));
     }
 
     /**
@@ -85,10 +93,16 @@ class AbogadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($data)
-    {   
+    {   $codigo_abogado = $data;
         $data = Abogado::findOrFail($data);
+        $datos = DB::table('controls')
+            ->where( 'codigo_abogado', '=', $data->id)
+            ->get();    
+
         
-        return view('admin.abogados.edit', compact('data'));
+         //dd($datos);
+
+        return view('admin.abogados.edit', compact('data','datos'));
     }
 
     /**

@@ -3,7 +3,15 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h2>Lista de Abogados</h2>
+   <div class="row">
+    <div class="col-sm-3 col-xs-12">
+        <a href="{{route("admin.reuniones.create")}}" class="btn btn-primary btn-sm">Crear Reunion</a>
+    </div>
+         <div class="col-sm-9 col-xs-12 ">
+            <h2>Lista de Reuniones del Equipo Juridico-Electoral</h2>
+        </div>
+        
+    </div> 
 @stop
 
 @section('content')
@@ -19,13 +27,13 @@
                     <thead style="tab-size: 10px">
                         <tr>
                             <th>#</th>
-                            <th>Nombre</th>
-                            <th>Telefono</th>
-                            <th>Direccion</th>
-                            <th>Correo</th>                           
+                            <th>Abogado</th>
+                            <th>Fecha</th>
+                            <th>Lugar</th>
+                            <th>Aforo</th>                           
+                            <th>status</th>
                             <th></th>
-                            <th></th>
-                            <th></th>
+                            
 
             
                         </tr>
@@ -37,20 +45,19 @@
                         <tr>
 
                             <td>{{ $data->id}}</td>
-                            <td>{{ $data->nombre}}</td>
-                            <td>{{ $data->telefono}}</td>
-                            <td>{{ $data->direccion}}</td>
-                            <td>{{ $data->correo}}</td>                 
-                            <td> <a href="{{route("admin.abogado.show", $data)}}" class="btn btn-success btn-sm">ver</a></td>
-                            <td> <a href="{{route("admin.abogado.edit", $data)}}" class="btn btn-primary btn-sm">editar</a></td>
-                           <td>
-                               <form action=" {{ route("admin.abogado.destroy", $data) }} " method="post">
-                                   @csrf
-                                   {{method_field('DELETE')}}
-                                   <input  class="btn btn-danger" type="submit" onclick="return confirm ('¿desea borrar el Abogado?')" value="Borrar">
-                               </form>
+                            <td>{{ $data->codigo_abogado}}</td>
+                            <td>{{ $data->fecha}}</td>
+                            <td>{{ $data->lugar}}</td>
+                            <td>{{ $data->aforo}}</td>      
+                            <td>
+                                @if($data->status == 1)
+                                    <i style="color: rgb(22, 161, 22)" class="fas fa-vote-yea"><p hidden>listo</p></i>
+                                @else
+                                    <i style="color: rgb(235, 62, 10) " class="fas fa-window-close"><p hidden>Pendiente</p></i>
+                                @endif
+                            </td>                 
 
-                           </td>
+                            <td></td>
                         </tr>
                             
                        @endforeach

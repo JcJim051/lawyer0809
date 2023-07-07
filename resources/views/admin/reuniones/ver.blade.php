@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h2>Editar Abogado</h2>
+    <h2>Ver informacion del Abogado, Asistencias y Reuniones</h2>
 @stop
 
 @section('content')
@@ -26,19 +26,19 @@
                             <div class="row">
                                 <div class="col-sm-8">
                                     <div class="row">
-                                        <input hidden class="form-control" type="text" id="id" name="id" placeholder="Nombre" value=" {{$data->id}} ">
+                                        <input hidden readonly class="form-control" type="text" id="id" name="id" placeholder="Nombre" value=" {{$data->id}} ">
 
                                         <div class="col-sm-4">                        
                                             <label for="nombre">Nombre Completo</label>
-                                            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" value=" {{$data->nombre}} ">
+                                            <input  readonly class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" value=" {{$data->nombre}} ">
                                         </div>
                                         <div class="col-sm-3">                        
                                             <label for="cc">Cedula de Ciudadania</label>
-                                            <input class="form-control" type="text" id="cc" name="cc" placeholder="Documento" value=" {{$data->cc}} ">
+                                            <input readonly class="form-control" type="text" id="cc" name="cc" placeholder="Documento" value=" {{$data->cc}} ">
                                         </div>
                                         <div class="col-sm-5">                        
                                             <label for="correo">Correo</label>
-                                            <input class="form-control" type="email" id="correo" name="correo" placeholder="E-mail" value=" {{$data->correo}} ">
+                                            <input  readonly class="form-control" type="email" id="correo" name="correo" placeholder="E-mail" value=" {{$data->correo}} ">
                                         </div>
             
                                     </div>
@@ -46,11 +46,11 @@
                                     <div class="row">
                                         <div class="col-sm-6">                        
                                             <label for="direccion">Dirección</label>
-                                            <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" value=" {{$data->direccion}} ">
+                                            <input readonly class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" value=" {{$data->direccion}} ">
                                         </div>
                                         <div class="col-sm-6">                        
                                             <label for="comuna">Comuna</label>
-                                            <input class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" value=" {{$data->comuna}} ">
+                                            <input readonly class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" value=" {{$data->comuna}} ">
                                         </div>                                
             
                                     </div><br>
@@ -58,11 +58,11 @@
                                     <div class="row">
                                         <div class="col-sm-8">                        
                                             <label for="puesto">Puesto de Votación</label>
-                                            <input class="form-control" type="text" id="puesto" name="puesto" placeholder="Puesto de votacion" value=" {{$data->puesto}} ">
+                                            <input readonly class="form-control" type="text" id="puesto" name="puesto" placeholder="Puesto de votacion" value=" {{$data->puesto}} ">
                                         </div>
                                         <div class="col-sm-4">                        
                                             <label for="mesa">Mesa</label>
-                                            <input class="form-control" type="text" id="mesa" name="mesa" placeholder="Mesa" value=" {{$data->mesa}} ">
+                                            <input readonly class="form-control" type="text" id="mesa" name="mesa" placeholder="Mesa" value=" {{$data->mesa}} ">
                                         </div>
                                     </div>
                                     
@@ -77,7 +77,7 @@
                                         <div class="card-body">
                                 
                                     <img src="  {{asset('storage/'.$data->foto)}} "height="180px" alt="Foto">
-                                    <input class="form-grup" type="file" name="foto" id="foto">
+                                    
                                         </div>
                                         
                                     </div>
@@ -88,7 +88,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <label for="Pdf">pdf de la cedula</label>
-                                    <input class="form-grup" type="file" name="pdf_cc" id="pdf_cc" >
+                                  
 
                                     @if ($data->pdf_cc == null)
                                         
@@ -108,8 +108,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-6">                        
-                                    <label for="estudios">Nivel de estudios</label>
-                                    <select class="form-control"  id="estudios" name="estudios">
+                                    <label  for="estudios">Nivel de estudios</label>
+                                    <select readonly class="form-control"  id="estudios" name="estudios">
                                         <option value= "{{$data->estudios}}">{{$data->estudios}}</option>
                                         <option value="profesional">Profesional</option>
                                         <option value="especialista">Especializacion</option>
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="titulo">Titulo Obtenido</label>
-                                    <input type="text" class="form-control" id="titulo" name="titulo" value="{{$data->titulo}}" >
+                                    <input readonly type="text" class="form-control" id="titulo" name="titulo" value="{{$data->titulo}}" >
                                 </div>
                             </div>
                         </div>
@@ -133,14 +133,14 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="experiencia">Experiencia</label>
-                                    <textarea class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->titulo}}</textarea>
+                                    <textarea readonly class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->titulo}}</textarea>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="electoral">¿Ha trabajado en proceso electoral anteriormente?</label>
-                                    <select name="electoral" id="electoral" class="form-control">
+                                    <select readonly name="electoral" id="electoral" class="form-control">
                                         <option value="{{$data->electoral}}">{{$data->electoral}}</option>
                                         <option value="si">Si</option>                                    
                                         <option value="no">No</option>
@@ -149,7 +149,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="rol">¿En que rol?</label>
-                                    <select name="rol" id="rol" class="form-control">
+                                    <select  readonly name="rol" id="rol" class="form-control">
                                         <option selected value="{{ $data->rol}}" >{{ $data->rol}}</option>
                                         <option value="ninguno">Ninguno</option>    
                                         <option value="testigo">Testigo</option>                                    
@@ -178,18 +178,18 @@
                                     <label class="sr-only" for="inlineFormInputGroup"></label>
                                     <div class="mb-2 input-group">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="fab fa-facebook-f"></i></div>
+                                        <div  class="input-group-text"><i class="fab fa-facebook-f"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="face" name="face" placeholder="@" value="{{$data->face}}">
+                                    <input readonly type="text" class="form-control" id="face" name="face" placeholder="@" value="{{$data->face}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="sr-only" for="inlineFormInputGroup"></label>
                                     <div class="mb-2 input-group">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="fab fa-instagram"></i></div>
+                                        <div readonly class="input-group-text"><i class="fab fa-instagram"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="insta" name="insta" placeholder="@" value="{{$data->insta}}">
+                                    <input readonly  type="text" class="form-control" id="insta" name="insta" placeholder="@" value="{{$data->insta}}">
                                     </div>
                                 </div>
                             </div>                                                  
@@ -202,53 +202,139 @@
                     </div> 
                     </div>
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Editar</button>
+                        
                       </div>
                       <br>
 
                      {!! Form::close() !!}
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h4>Historial de Asistencias</h4>
-                </div>    
-                <div class="card-body">
-                    <table  id="example" class="display responsive nowrap" style="width:99%">
-                        <thead style="tab-size: 10px">
-                            <tr>
-                                <th>#</th>
-                                <th>Lugar de La reunion</th>
-                                <th>Motivo</th>
-                                <th>Fecha</th>
-                               
-                
-                            </tr>
-                        </thead>
-                
-                        <tbody>
-                           
-                                @foreach ($datos as $datos)
-                                    
-                               
-                            <tr>
-    
-                                <td> {{$datos->id}}</td>
-                                <td> {{$datos->lugar}}</td>
-                                <td> {{$datos->motivo}}</td>
-                                <td> {{$datos->fecha}}</td>
-                               
-    
-                              
-                            </tr>
-                                
-                            @endforeach
-                
-                        </tbody>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Historial de Asistencias</h4>
+                        </div>    
+                        <div class="card-body">
+                            <table  id="example" class="display nowrap" style="width:99%">
+                                <thead style="tab-size: 10px">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Lugar de La reunion</th>
+                                        <th>Motivo</th>
+                                        <th>Fecha</th>
+                                       
                         
-                    </table>
+                                    </tr>
+                                </thead>
+                        
+                                <tbody>
+                                   
+                                        @foreach ($datos as $datos)
+                                            
+                                       
+                                    <tr>
+            
+                                        <td> {{$datos->id}}</td>
+                                        <td> {{$datos->lugar}}</td>
+                                        <td> {{$datos->motivo}}</td>
+                                        <td> {{$datos->fecha}}</td>
+                                       
+            
+                                      
+                                    </tr>
+                                        
+                                    @endforeach
+                        
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                    </div>
+                    
                 </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Historial de reuniones</h4>
+                        </div>    
+                        <div class="card-body">
+                            <table  id="example" class="display responsive nowrap" style="width:99%">
+                                <thead style="tab-size: 10px">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Lugar de La reunion</th>
+                                        <th>Aforo</th>
+                                        <th>Fecha</th>
+                                       
+                        
+                                    </tr>
+                                </thead>
+                        
+                                <tbody>
+                                   
+                                        {{-- @foreach ($datos as $datos)
+                                            
+                                       
+                                    <tr>
+            
+                                        <td> {{$datos->id}}</td>
+                                        <td> {{$datos->lugar}}</td>
+                                        <td> {{$datos->motivo}}</td>
+                                        <td> {{$datos->fecha}}</td>
+                                       
+            
+                                      
+                                    </tr>
+                                        
+                                    @endforeach
+                         --}}
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+
             </div>
         </div>
 
 @stop
+@section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
+@endsection
+
+
+
+@section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.print.min.js"></script>
+    <script>$(document).ready(function () {
+        $('#example').DataTable({
+            
+            "pageLength": 25,
+             "columnDefs": [
+
+           
+
+             ],
+           
+             
+
+             }
+             );
+         })
+     </script>
+@endsection
+
+
+
 
