@@ -48,10 +48,14 @@
                                             <label for="direccion">Dirección</label>
                                             <input readonly class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" value=" {{$data->direccion}} ">
                                         </div>
-                                        <div class="col-sm-6">                        
+                                        <div class="col-sm-3">                        
                                             <label for="comuna">Comuna</label>
-                                            <input readonly class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" value=" {{$data->comuna}} ">
-                                        </div>                                
+                                            <input readonly class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" value=" {{$data->comuna}}">
+                                        </div>    
+                                        <div class="col-sm-3">                        
+                                            <label for="comuna">Fecha de ingreso</label>
+                                            <input readonly class="form-control" type="text" id="fecha_inicio" name="fecha_inicio" value=" {{$data->fecha_inicio}}">
+                                        </div>                                 
             
                                     </div><br>
 
@@ -111,10 +115,7 @@
                                     <label  for="estudios">Nivel de estudios</label>
                                     <select readonly class="form-control"  id="estudios" name="estudios">
                                         <option value= "{{$data->estudios}}">{{$data->estudios}}</option>
-                                        <option value="profesional">Profesional</option>
-                                        <option value="especialista">Especializacion</option>
-                                        <option value="maestria">Maestria</option>
-                                        <option value="doctorado">Doctorado</option>
+                                        
                                     </select>                                   
                                 </div>
                                 <div class="col-sm-6">
@@ -135,6 +136,20 @@
                                     <label for="experiencia">Experiencia</label>
                                     <textarea readonly class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->experiencia}}</textarea>
                                 </div>
+                                <div class="col-sm-6">
+                                    <label for="titulo">¿Es Funcionario Publico?</label>
+                                    <Select readonly name="funcionario" id="funcionario" class="form-control">
+                                        
+                                        <option value="$data->funcionario"> @if ($data->funcionario== 0)
+                                            No
+                                        @else
+                                            Si
+                                        @endif</option>
+                                        
+                                        
+                                        
+                                    </Select>
+                                </div>
                             </div>
 
                             <div class="row">
@@ -142,8 +157,7 @@
                                     <label for="electoral">¿Ha trabajado en proceso electoral anteriormente?</label>
                                     <select readonly name="electoral" id="electoral" class="form-control">
                                         <option value="{{$data->electoral}}">{{$data->electoral}}</option>
-                                        <option value="si">Si</option>                                    
-                                        <option value="no">No</option>
+                                        
                                         
                                     </select>
                                 </div>
@@ -151,16 +165,7 @@
                                     <label for="rol">¿En que rol?</label>
                                     <select  readonly name="rol" id="rol" class="form-control">
                                         <option selected value="{{ $data->rol}}" >{{ $data->rol}}</option>
-                                        <option value="ninguno">Ninguno</option>    
-                                        <option value="testigo">Testigo</option>                                    
-                                        <option value="coordinado">Coordinador de puesto</option>
-                                        <option value="escrutador_zonal">Testigo de Escrutinios Zonal </option>
-                                        <option value="escrutador_municipal">Testigo de Escrutinios Municipal</option>
-                                        <option value="escrutador_departamental">Testigo de Escrutinios Departamental</option>
-                                        <option value="escrutador_nacional">Testigo de Escrutinios Nacional</option>
-                                        <option value="registraduria">Funcionario de laregistraduria</option>
-                                        <option value="mesa_de_justicia">Mesa de Justicia</option>
-                                        <option value="coordinado">Coordinador</option>                                    
+                                                                         
                                     </select>
                                 </div>
                             </div>
@@ -272,22 +277,32 @@
                         
                                 <tbody>
                                    
-                                        {{-- @foreach ($datos as $datos)
+                                        @foreach ($reunion as $reunion)
                                             
                                        
                                     <tr>
             
-                                        <td> {{$datos->id}}</td>
-                                        <td> {{$datos->lugar}}</td>
-                                        <td> {{$datos->motivo}}</td>
-                                        <td> {{$datos->fecha}}</td>
+                                       
+                                        @if ($reunion->status == 1)
+                                            <td style="color:green"> {{$reunion->id}}</td> 
+                                            <td style="color:green"> {{$reunion->lugar}}</td>
+                                            <td style="color:green"> {{$reunion->aforo}}</td>
+                                            <td style="color:green"> {{$reunion->fecha}}</td> 
+                                        @else
+                                        <td style="color:red"> {{$reunion->id}}</td> 
+                                        <td style="color:red"> {{$reunion->lugar}}</td>
+                                        <td style="color:red"> {{$reunion->aforo}}</td>
+                                        <td style="color:red"> {{$reunion->fecha}}</td> 
+                                        @endif
+                                        
+
                                        
             
                                       
                                     </tr>
                                         
                                     @endforeach
-                         --}}
+                        
                                 </tbody>
                                 
                             </table>
@@ -326,6 +341,7 @@
            
 
              ],
+             
            
              
 

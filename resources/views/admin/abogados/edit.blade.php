@@ -48,10 +48,14 @@
                                             <label for="direccion">Dirección</label>
                                             <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" value=" {{$data->direccion}} ">
                                         </div>
-                                        <div class="col-sm-6">                        
+                                        <div class="col-sm-3">                        
                                             <label for="comuna">Comuna</label>
-                                            <input class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" value=" {{$data->comuna}} ">
-                                        </div>                                
+                                            <input class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" value=" {{$data->comuna}}">
+                                        </div>    
+                                        <div class="col-sm-3">                        
+                                            <label for="comuna">Fecha de ingreso</label>
+                                            <input class="form-control" type="text" id="fecha_inicio" name="fecha_inicio" value=" {{$data->fecha_inicio}}">
+                                        </div>                                   
             
                                     </div><br>
 
@@ -133,7 +137,24 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="experiencia">Experiencia</label>
-                                    <textarea class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->titulo}}</textarea>
+                                    <textarea class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->experiencia}}</textarea>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="titulo">¿Es Funcionario Publico?</label>
+                                    <Select name="funcionario" id="funcionario" class="form-control">
+                                        
+                                         @if ($data->funcionario == 0)
+                                            <option selected value="0">No</option>
+                                            <option value="1">Si</option>
+                                         @else
+                                            <option selected value="1">Si</option>
+                                            <option  value="0">No</option>
+                                            
+                                         @endif
+                                        
+                                        
+                                        
+                                    </Select>
                                 </div>
                             </div>
 

@@ -28,15 +28,15 @@
                                     <div class="row">
                                         <div class="col-sm-4">                        
                                             <label for="nombre">Nombre Completo</label>
-                                            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre">
+                                            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                                         </div>
                                         <div class="col-sm-4">                        
                                             <label for="cc">Cedula de Ciudadania</label>
-                                            <input class="form-control" type="text" id="cc" name="cc" placeholder="Documento">
+                                            <input class="form-control" type="text" id="cc" name="cc" placeholder="Documento" required>
                                         </div>
                                         <div class="col-sm-4">                        
                                             <label for="correo">Correo</label>
-                                            <input class="form-control" type="email" id="correo" name="correo" placeholder="E-mail">
+                                            <input class="form-control" type="email" id="correo" name="correo" placeholder="E-mail" required>
                                         </div>
             
                                     </div>
@@ -44,23 +44,27 @@
                                     <div class="row">
                                         <div class="col-sm-6">                        
                                             <label for="direccion">Dirección</label>
-                                            <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion">
+                                            <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" required>
                                         </div>
-                                        <div class="col-sm-6">                        
+                                        <div class="col-sm-3">                        
                                             <label for="comuna">Comuna</label>
-                                            <input class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna">
-                                        </div>                                
+                                            <input class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" required>
+                                        </div>    
+                                        <div class="col-sm-3">                        
+                                            <label for="comuna">Fecha de ingreso</label>
+                                            <input class="form-control" type="date" id="fecha_inicio" name="fecha_inicio" placeholder="dia/mes/año" required>
+                                        </div>                            
             
                                     </div><br>
 
                                     <div class="row">
                                         <div class="col-sm-8">                        
                                             <label for="puesto">Puesto de Votación</label>
-                                            <input class="form-control" type="text" id="puesto" name="puesto" placeholder="Puesto de votacion">
+                                            <input class="form-control" type="text" id="puesto" name="puesto" placeholder="Puesto de votacion" required>
                                         </div>
                                         <div class="col-sm-4">                        
                                             <label for="mesa">Mesa</label>
-                                            <input class="form-control" type="text" id="mesa" name="mesa" placeholder="Mesa">
+                                            <input class="form-control" type="text" id="mesa" name="mesa" placeholder="Mesa" required>
                                         </div>
                                     </div>
                                     
@@ -128,7 +132,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="titulo">¿Es Funcionario Publico?</label>
-                                    <Select name="rol" id="rol" class="form-control">
+                                    <Select name="funcionario" id="funcionario" class="form-control">
                                         <option value="">Seleccione una opcion</option>
                                         <option value="0">No</option>
                                         <option value="1">Si</option>

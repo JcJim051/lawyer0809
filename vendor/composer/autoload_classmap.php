@@ -17,6 +17,8 @@ return array(
     'App\\Http\\Controllers\\Admin\\AbogadoController' => $baseDir . '/app/Http/Controllers/Admin/AbogadoController.php',
     'App\\Http\\Controllers\\Admin\\AdminController' => $baseDir . '/app/Http/Controllers/Admin/AdminController.php',
     'App\\Http\\Controllers\\Admin\\AsistenciaController' => $baseDir . '/app/Http/Controllers/Admin/AsistenciaController.php',
+    'App\\Http\\Controllers\\Admin\\InformesController' => $baseDir . '/app/Http/Controllers/Admin/InformesController.php',
+    'App\\Http\\Controllers\\Admin\\ReunionesController' => $baseDir . '/app/Http/Controllers/Admin/ReunionesController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

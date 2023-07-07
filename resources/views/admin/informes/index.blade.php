@@ -20,13 +20,26 @@
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>
+                            <th>cc</th>
+                            <th>Correo</th>  
                             <th>Telefono</th>
-                            <th>Direccion</th>
-                            <th>Correo</th>                           
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>direccion</th>  
+                            <th>comuna</th>  
+                            
+                            <th>puesto</th>
+                            <th>mesa</th>
+                            <th>fecha inicio</th>
+                            <th>estudios</th>
+                            <th>titulo</th>
+                            <th>Fun Publico</th>
 
+                            <th>experiencia</th>
+                            <th>electoral</th>
+                            <th>rol</th>
+                            <th>face</th>
+                            <th>insta</th>
+                          
+                            
             
                         </tr>
                     </thead>
@@ -38,17 +51,23 @@
 
                             <td>{{ $data->id}}</td>
                             <td>{{ $data->nombre}}</td>
-                            <td>{{ $data->telefono}}</td>
-                            <td>{{ $data->direccion}}</td>
-                            <td>{{ $data->correo}}</td>                 
-                            <td> <a href="{{route("admin.abogado.show", $data)}}" class="btn btn-success btn-sm">ver</a></td>
-                            <td> <a href="{{route("admin.abogado.edit", $data)}}" class="btn btn-primary btn-sm">editar</a></td>
-                           <td>
-                               <form action=" {{ route("admin.abogado.destroy", $data) }} " method="post">
-                                   @csrf
-                                   {{method_field('DELETE')}}
-                                   <input  class="btn btn-danger" type="submit" onclick="return confirm ('¿desea borrar el Abogado?')" value="Borrar">
-                               </form>
+                            <td>{{ $data->cc}}</td>
+                            <td>{{ $data->correo}}</td>
+                            <td>{{ $data->telefono}}</td>                 
+                            <td>{{ $data->direccion}}</td>   
+                            <td>{{ $data->comuna}}</td>    
+                            <td>{{ $data->puesto}}</td>    
+                            <td>{{ $data->mesa}}</td>  
+                            <td>{{ $data->fecha_inicio}}</td>      
+                            <td>{{ $data->estudios}}</td>    
+                            <td>{{ $data->titulo}}</td>    
+                            <td>{{ $data->funcionario}}</td>    
+                            <td>{{ $data->experiencia}}</td>    
+                            <td>{{ $data->electoral}}</td>    
+                            <td>{{ $data->rol}}</td>    
+                            <td>{{ $data->face}}</td>    
+                            <td>{{ $data->insta}}</td>    
+                            
 
                            </td>
                         </tr>
@@ -86,7 +105,14 @@
  
              
              ],
-            
+                 "dom": 'Bfrtip',
+                "buttons": [
+                {
+                "extend": 'excelHtml5',
+                "title": 'abogados_caracterizados_xls'
+                 },
+                
+            ]
  
              }
              );

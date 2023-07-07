@@ -61,7 +61,7 @@ class AbogadoController extends Controller
 
         Abogado::insert($data);
 
-        // dd($data);
+        //dd($data);
 
        
 
@@ -81,9 +81,13 @@ class AbogadoController extends Controller
             $data = Abogado::findOrFail($data);
             $datos = DB::table('controls')
             ->where( 'codigo_abogado', '=', $data->id)
-            ->get();    
+            ->get(); 
 
-        return view('admin.abogados.ver', compact('data','datos'));
+            $reunion = DB::table('reuniones')
+            ->where( 'codigo_abogado', '=', $data->id)
+            ->get(); 
+
+        return view('admin.abogados.ver', compact('data','datos', 'reunion'));
     }
 
     /**
@@ -100,7 +104,7 @@ class AbogadoController extends Controller
             ->get();    
 
         
-         //dd($datos);
+         //dd($data);
 
         return view('admin.abogados.edit', compact('data','datos'));
     }
@@ -121,12 +125,12 @@ class AbogadoController extends Controller
         if ($request->hasFile('pdf_cc')){
               $datos['pdf_cc']= $request->file('pdf_cc')->store('cc','public');
             }
-       
+            //dd($datos);
         
         
         $id= $request->id;
         Abogado::where('id','=', $id)->update($datos);
-
+            
          return redirect()->route('admin.abogado.index')->with('info', 'Abogado Editado Correctamente');
     }
 

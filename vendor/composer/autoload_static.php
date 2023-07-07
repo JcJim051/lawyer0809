@@ -585,6 +585,8 @@ class ComposerStaticInit0a9b011797dc2ee7553857e4764ac4df
         'App\\Http\\Controllers\\Admin\\AbogadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AbogadoController.php',
         'App\\Http\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminController.php',
         'App\\Http\\Controllers\\Admin\\AsistenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AsistenciaController.php',
+        'App\\Http\\Controllers\\Admin\\InformesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/InformesController.php',
+        'App\\Http\\Controllers\\Admin\\ReunionesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ReunionesController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
