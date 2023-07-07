@@ -60,7 +60,11 @@
                                     </div><br>
 
                                     <div class="row">
-                                        <div class="col-sm-8">                        
+                                        <div class="col-sm-3">                        
+                                            <label for="puesto">Telefono</label>
+                                            <input class="form-control" type="text" id="telefono" name="telefono" placeholder="Numero" value=" {{$data->telefono}} ">
+                                        </div>
+                                        <div class="col-sm-5">                        
                                             <label for="puesto">Puesto de Votación</label>
                                             <input class="form-control" type="text" id="puesto" name="puesto" placeholder="Puesto de votacion" value=" {{$data->puesto}} ">
                                         </div>

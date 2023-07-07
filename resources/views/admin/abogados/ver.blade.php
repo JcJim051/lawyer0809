@@ -60,7 +60,12 @@
                                     </div><br>
 
                                     <div class="row">
-                                        <div class="col-sm-8">                        
+                                        <div class="col-sm-3">                        
+                                        <label for="puesto">Telefono</label>
+                                        <input readonly class="form-control" type="text" id="telefono" name="telefono" placeholder="Numero" value=" {{$data->telefono}} ">
+                                    </div>
+                                        
+                                        <div class="col-sm-5">                        
                                             <label for="puesto">Puesto de Votación</label>
                                             <input readonly class="form-control" type="text" id="puesto" name="puesto" placeholder="Puesto de votacion" value=" {{$data->puesto}} ">
                                         </div>
@@ -220,7 +225,7 @@
                             <h4>Historial de Asistencias</h4>
                         </div>    
                         <div class="card-body">
-                            <table  id="example" class="display nowrap" style="width:99%">
+                            <table  id="example" class="display responsive nowrap" style="width:99%">
                                 <thead style="tab-size: 10px">
                                     <tr>
                                         <th>#</th>
