@@ -48,14 +48,11 @@
                                             <label for="direccion">Dirección</label>
                                             <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" value=" {{$data->direccion}} ">
                                         </div>
-                                        <div class="col-sm-3">                        
+                                        <div class="col-sm-6">                        
                                             <label for="comuna">Comuna</label>
                                             <input class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" value=" {{$data->comuna}}">
                                         </div>    
-                                        <div class="col-sm-3">                        
-                                            <label for="comuna">Fecha de ingreso</label>
-                                            <input class="form-control" type="text" id="fecha_inicio" name="fecha_inicio" value=" {{$data->fecha_inicio}}">
-                                        </div>                                   
+                                                                       
             
                                     </div><br>
 
@@ -94,9 +91,23 @@
                             </div>
                                 
                             <div class="row">
-                                <div class="col-sm-12">
+
+                                <div class="col-sm-3">                        
+                                    <label for="comuna">Fecha de ingreso</label>
+                                    <input class="form-control" type="date" id="fecha_inicio" name="fecha_inicio" placeholder="dia/mes/año" value="{{$data->fecha_inicio}}" required>
+                                </div>  
+                                <div class="col-sm-3">                        
+                                    <label for="alcaldia">¿Camapaña anterior?</label>
+                                    <select class="form-control" name="alcaldia" id="alcaldia">
+                                        <option value= "{{$data->alcaldia}}">{{$data->alcaldia}}</option>
+                                        <option value="0">Seleccione una opción</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>  
+                                <div class="col-sm-6">
                                     <label for="Pdf">pdf de la cedula</label>
-                                    <input class="form-grup" type="file" name="pdf_cc" id="pdf_cc" >
+                                    <input class="form-control" type="file" name="pdf_cc" id="pdf_cc" >
 
                                     @if ($data->pdf_cc == null)
                                         
@@ -104,6 +115,13 @@
                                         <a  target="_blank" href="{{asset('storage/'.$data->pdf_cc)}}">Ver Cedula cargada</a>
                                     @endif
 
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="rol_actual">¿Cual es el rol que desempeña en la campaña actual?</label>
+                                    <input class="form-control" type="text" name="rol_actual" id="rol_actual" value="{{$data->rol_actual}}">
                                 </div>
                             </div>
                         </div> 
@@ -119,6 +137,9 @@
                                     <label for="estudios">Nivel de estudios</label>
                                     <select class="form-control"  id="estudios" name="estudios">
                                         <option value= "{{$data->estudios}}">{{$data->estudios}}</option>
+                                        <option value="">Seleccione una opcion</option>
+                                        <option value="profesional">Estudiante</option>
+                                        <option value="profesional">Judicante</option>
                                         <option value="profesional">Profesional</option>
                                         <option value="especialista">Especializacion</option>
                                         <option value="maestria">Maestria</option>
@@ -139,10 +160,13 @@
                         </div>    
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
                                     <label for="experiencia">Experiencia</label>
                                     <textarea class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->experiencia}}</textarea>
                                 </div>
+                               
+                            </div>
+                            <div class="row">
                                 <div class="col-sm-6">
                                     <label for="titulo">¿Es Funcionario Publico?</label>
                                     <Select name="funcionario" id="funcionario" class="form-control">
@@ -160,8 +184,11 @@
                                         
                                     </Select>
                                 </div>
+                                <div class="col-sm-6">
+                                    <label for="lugar">Municipio donde de trabaja</label>
+                                    <input type="text" class="form-control" id="lugar" name="lugar" value="{{$data->lugar}}" >
+                                </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="electoral">¿Ha trabajado en proceso electoral anteriormente?</label>
@@ -190,6 +217,7 @@
                                     </select>
                                 </div>
                             </div>
+                           
                         </div> 
                     </div>
                       
@@ -234,46 +262,7 @@
 
                      {!! Form::close() !!}
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h4>Historial de Asistencias</h4>
-                </div>    
-                <div class="card-body">
-                    <table  id="example" class="display responsive nowrap" style="width:99%">
-                        <thead style="tab-size: 10px">
-                            <tr>
-                                <th>#</th>
-                                <th>Lugar de La reunion</th>
-                                <th>Motivo</th>
-                                <th>Fecha</th>
-                               
-                
-                            </tr>
-                        </thead>
-                
-                        <tbody>
-                           
-                                @foreach ($datos as $datos)
-                                    
-                               
-                            <tr>
-    
-                                <td> {{$datos->id}}</td>
-                                <td> {{$datos->lugar}}</td>
-                                <td> {{$datos->motivo}}</td>
-                                <td> {{$datos->fecha}}</td>
-                               
-    
-                              
-                            </tr>
-                                
-                            @endforeach
-                
-                        </tbody>
-                        
-                    </table>
-                </div>
-            </div>
+          
         </div>
 
 @stop

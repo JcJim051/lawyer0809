@@ -75,6 +75,7 @@
                                         </div>
                                     </div>
                                     
+                                    
                                 </div>
 
                                 
@@ -95,9 +96,21 @@
                             </div>
                                 
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-3">                        
+                                    <label for="comuna">Fecha de ingreso</label>
+                                    <input readonly class="form-control" type="date" id="fecha_inicio" name="fecha_inicio" placeholder="dia/mes/año" value="{{$data->fecha_inicio}}" required>
+                                </div>  
+                                <div class="col-sm-3">                        
+                                    <label for="alcaldia">¿Camapaña anterior?</label>
+                                    <select  required class="form-control" name="alcaldia" id="alcaldia">
+                                        <option value= "{{$data->alcaldia}}">{{$data->alcaldia}}</option>
+                                        
+                                    </select>
+                                </div>  
+                                
+                                <div class="col-sm-6">
                                     <label for="Pdf">pdf de la cedula</label>
-                                  
+                                  <br>
 
                                     @if ($data->pdf_cc == null)
                                         
@@ -105,6 +118,12 @@
                                         <a  target="_blank" href="{{asset('storage/'.$data->pdf_cc)}}">Ver Cedula cargada</a>
                                     @endif
 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="rol_actual">¿Cual es el rol que desempeña en la campaña actual?</label>
+                                    <input readonly class="form-control" type="text" name="rol_acutal" id="rol_actual" value="{{$data->rol_actual}}">
                                 </div>
                             </div>
                         </div> 
@@ -137,10 +156,14 @@
                         </div>    
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <label for="experiencia">Experiencia</label>
                                     <textarea readonly class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" >{{$data->experiencia}}</textarea>
                                 </div>
+                                
+                            </div>
+
+                            <div class="row">
                                 <div class="col-sm-6">
                                     <label for="titulo">¿Es Funcionario Publico?</label>
                                     <Select readonly name="funcionario" id="funcionario" class="form-control">
@@ -154,6 +177,10 @@
                                         
                                         
                                     </Select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="lugar">Municipio donde de trabaja</label>
+                                    <input readonly type="text" class="form-control" id="lugar" name="lugar" value="{{$data->lugar}}" >
                                 </div>
                             </div>
 

@@ -46,14 +46,12 @@
                                             <label for="direccion">Dirección</label>
                                             <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" required>
                                         </div>
-                                        <div class="col-sm-3">                        
+                                        <div class="col-sm-6">                        
                                             <label for="comuna">Comuna</label>
                                             <input class="form-control" type="text" id="comuna" name="comuna" placeholder="Comuna" required>
                                         </div>    
-                                        <div class="col-sm-3">                        
-                                            <label for="comuna">Fecha de ingreso</label>
-                                            <input class="form-control" type="date" id="fecha_inicio" name="fecha_inicio" placeholder="dia/mes/año" required>
-                                        </div>                            
+                                       
+
             
                                     </div><br>
 
@@ -91,10 +89,28 @@
                             </div>
                                 
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-3">                        
+                                    <label for="comuna">Fecha de ingreso</label>
+                                    <input class="form-control" type="date" id="fecha_inicio" name="fecha_inicio" placeholder="dia/mes/año" required>
+                                </div>  
+                                <div class="col-sm-3">                        
+                                    <label for="alcaldia">¿Camapaña anterior?</label>
+                                    <select class="form-control" name="alcaldia" id="alcaldia">
+                                        <option value="0">Seleccione una opción</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>  
+                                <div class="col-sm-6">
                                     <label for="Pdf">pdf de la cedula</label>
-                                    <input class="form-grup" type="file" name="pdf_cc" id="pdf_cc">
+                                    <input class="form-control" type="file" name="pdf_cc" id="pdf_cc">
 
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="rol_actual">¿Cual es el rol que desempeña en la campaña actual?</label>
+                                    <input class="form-control" type="text" name="rol_actual" id="rol_actual">
                                 </div>
                             </div>
                         </div> 
@@ -110,6 +126,8 @@
                                     <label for="estudios">Nivel de estudios</label>
                                     <select class="form-control"  id="estudios" name="estudios">
                                         <option value="">Seleccione una opcion</option>
+                                        <option value="profesional">Estudiante</option>
+                                        <option value="profesional">Judicante</option>
                                         <option value="profesional">Profesional</option>
                                         <option value="especialista">Especializacion</option>
                                         <option value="maestria">Maestria</option>
@@ -130,10 +148,13 @@
                         </div>    
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
                                     <label for="experiencia">Experiencia</label>
                                     <textarea class="form-control" id="experiencia" name="experiencia" placeholder="Describa brevemente el campo de experiencia" ></textarea>
                                 </div>
+                                
+                            </div>
+                            <div class="row">
                                 <div class="col-sm-6">
                                     <label for="titulo">¿Es Funcionario Publico?</label>
                                     <Select name="funcionario" id="funcionario" class="form-control">
@@ -141,6 +162,10 @@
                                         <option value="0">No</option>
                                         <option value="1">Si</option>
                                     </Select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="lugar">Municipio donde de trabaja</label>
+                                    <input type="text" class="form-control" id="lugar" name="lugar" > 
                                 </div>
                             </div>
 
