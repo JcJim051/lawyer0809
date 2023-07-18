@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h2>Caracterizacion de Abogado</h2>
+    <h2>Caracterizacion Grupo Electoral</h2>
 @stop
 
 @section('content')
@@ -108,9 +108,23 @@
                                 </div>
                             </div><br>
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <label for="rol_actual">¿Cual es el rol que desempeña en la campaña actual?</label>
                                     <input class="form-control" type="text" name="rol_actual" id="rol_actual">
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="disponibilidad">¿Disponibilidad?</label>
+                                    <select class="form-control"  id="disponibilidad" name="disponibilidad">
+                                        <option value="">Seleccione una opcion</option>
+                                        <option value="profesional">Mañana</option>
+                                        <option value="profesional">Tarde</option>
+                                        <option value="profesional">Noche</option>
+                                        <option value="especialista">24/7</option>
+                                    </select>             
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="observacion">¿Observacion?</label>
+                                    <input class="form-control" type="text" name="observacion" id="observacion">
                                 </div>
                             </div>
                         </div> 
@@ -135,7 +149,7 @@
                                     </select>                                   
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="titulo">Titulo Obtenido</label>
+                                    <label for="titulo">Profesión - Estudios Adicionales </label>
                                     <input type="text" class="form-control" id="titulo" name="titulo"  >
                                 </div>
                             </div>

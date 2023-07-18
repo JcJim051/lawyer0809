@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h2>Lista de Abogados</h2>
+    <h2>Lista de Profesionales del Equipo Electoral</h2>
 @stop
 
 @section('content')

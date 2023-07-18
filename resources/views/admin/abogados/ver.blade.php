@@ -121,9 +121,20 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <label for="rol_actual">¿Cual es el rol que desempeña en la campaña actual?</label>
                                     <input readonly class="form-control" type="text" name="rol_acutal" id="rol_actual" value="{{$data->rol_actual}}">
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="disponibilidad">¿Disponibilidad?</label>
+                                    <select readonly class="form-control"  id="disponibilidad" name="disponibilidad">
+                                        <option value="{{$data->disponibilidad}}">{{$data->disponibilidad}}</option>
+                                        
+                                    </select>             
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="observacion">¿Observacion?</label>
+                                    <input readonly class="form-control" type="text" name="observacion" id="observacion" value="{{$data->observacion}}">
                                 </div>
                             </div>
                         </div> 

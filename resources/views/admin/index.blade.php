@@ -21,7 +21,8 @@
         margin: auto;
 }
 </style>
-    <h2>Aplicacion de Caracterizacion de abogados</h2>
+    <h2>Aplicacion de Caracterizacion de profesionales del equipo Electoral
+    </h2>
 @stop
 
 @section('content')

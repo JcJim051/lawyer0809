@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h2>Editar Abogado</h2>
+    <h2>Editar Profesional</h2>
 @stop
 
 @section('content')
@@ -119,9 +119,23 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <label for="rol_actual">¿Cual es el rol que desempeña en la campaña actual?</label>
                                     <input class="form-control" type="text" name="rol_actual" id="rol_actual" value="{{$data->rol_actual}}">
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="disponibilidad">¿Disponibilidad?</label>
+                                    <select class="form-control"  id="disponibilidad" name="disponibilidad">
+                                        <option value="{{$data->disponibilidad}}">{{$data->disponibilidad}}</option>
+                                        <option value="Mañana">Mañana</option>
+                                        <option value="Tarde">Tarde</option>
+                                        <option value="Noche">Noche</option>
+                                        <option value="24/7">24/7</option>
+                                    </select>             
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="observacion">¿Observacion?</label>
+                                    <input class="form-control" type="text" name="observacion" id="observacion" value="{{$data->observacion}}">
                                 </div>
                             </div>
                         </div> 
@@ -147,7 +161,7 @@
                                     </select>                                   
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="titulo">Titulo Obtenido</label>
+                                    <label for="titulo">Profesión - Estudios Adicionales</label>
                                     <input type="text" class="form-control" id="titulo" name="titulo" value="{{$data->titulo}}" >
                                 </div>
                             </div>
