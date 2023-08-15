@@ -29,4 +29,21 @@ class AsistenciaController extends Controller
         
         return redirect()->back()->with('info', 'Reporte de asistencia realizado con exíto');
     }
+    public function mostrarFormulario1()
+    {
+        $fechaHoraActual = Carbon::now();
+        $fechaHoraActual=$fechaHoraActual->setTimezone('America/Bogota');
+        $abogados = Abogado::all();
+        // dd($abogados);
+        return view('admin.formulario.index1', compact('abogados','fechaHoraActual'));
+    }
+    public function procesarFormulario1(Request $request)
+    {
+        
+        $data= request()->except('_token');
+        //dd($data);
+        Control::insert($data);
+        
+        return redirect()->back()->with('info', 'Reporte de asistencia realizado con exíto');
+    }
 }

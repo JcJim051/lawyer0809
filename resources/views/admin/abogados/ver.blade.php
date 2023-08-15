@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h2>Ver informacion del Abogado, Asistencias y Reuniones</h2>
+    <h2>Ver informacion del profesional, Asistencias y Reuniones</h2>
 @stop
 
 @section('content')

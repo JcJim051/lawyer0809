@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <style>
                     body{
@@ -75,6 +74,7 @@
     <form action="{{route('procesarFormulario')}}" method="post" accept="UTF-8" >
         @csrf
             <div class="container">
+                <h1>Formulario para asistencia, con modificacion de fecha</h1>
                 <div class="shadow-lg contact__wrapper mt-n9">
                     <div class="row no-gutters">
                         
@@ -84,7 +84,7 @@
                                     <div class="mb-3 col-sm-6">
                                         <div class="form-group">
                                             <label class="required-field" for="fecha">Fecha</label>
-                                            <input type="datetime" class="form-control" id="fecha" name="fecha" value="{{$fechaHoraActual->format('Y-m-d H:i:s')}} " readonly>
+                                            <input type="datetime" class="form-control" id="fecha" name="fecha" value="{{$fechaHoraActual->format('Y-m-d H:i:s')}} " >
                                         </div>
                                     </div>
                 
@@ -155,7 +155,6 @@
                 </div>
             </div>
     </form>
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
